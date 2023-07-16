@@ -1,15 +1,12 @@
-<!DOCTYPE html> 
-<html lang="en">
+const APIKey = "bf18cdbcb62244f196c3b93693db628b";
+const queryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+let city;
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  <title>Weather Dashboard</title>
-</head>
-
-<body>
-
-</body>
-
-</html>
+fetch(queryUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log('Fetch Response \n-------------');
+    console.log(data);
+  });
