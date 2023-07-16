@@ -1,0 +1,22 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 10px;
+}
+
+main {
+    display: block;
+}
+
+#search-left-side {
+    width: 30%;
+    float: left;
+}
+
+#weather-right-side {
+    width: 70%;
+    float: right;
+}
