@@ -47,11 +47,11 @@ header {
 }
 
 .saved-search-entry {
-    color: #000; /* Change the color value to the desired text color */
+    color: #000; 
   }
   
   .saved-search-entry:hover {
-    color: #0D9DE3; /* Change the color value to the desired text color on hover */
+    color: #0D9DE3; 
   }  
 
 #weather-right-side {
@@ -69,10 +69,6 @@ header {
     padding: 0 400px;
     margin-bottom: 50px;
     margin-top: 10px;
-}
-
-#weather-icon {
-    transform: scale(2);
 }
 
 .weather-current {
