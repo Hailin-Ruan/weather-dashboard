@@ -6,6 +6,7 @@ const SearchBtn = document.querySelector("#button");
 const weatherIcons = document.querySelectorAll(".weather-icon");
 
 const savedSearchesContainer = document.querySelector("#saved-searches");
+const clearSavedSearchesBtn = document.querySelector("#clear-saved-searches");
 
 function saveInputToLocalStorage() {
   const inputValue = searchInput.value;
@@ -23,16 +24,43 @@ function displaySavedSearches() {
   const savedSearches = JSON.parse(localStorage.getItem("savedSearches")) || [];
 
   savedSearches.forEach(searchValue => {
-    const searchEntry = document.createElement("button");
-    searchEntry.textContent = searchValue;
+    const searchEntry = document.createElement("div");
+    searchEntry.classList.add("saved-search-entry");
+
+    const searchValueElement = document.createElement("span");
+    searchValueElement.textContent = searchValue;
+    searchEntry.appendChild(searchValueElement);
+
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("remove-button");
+    removeButton.innerHTML = "&#10006;";
+    removeButton.addEventListener("click", () => {
+      removeSavedSearch(searchValue);
+    });
+    searchEntry.appendChild(removeButton);
+
     searchEntry.addEventListener("click", () => {
       checkWeather(searchValue);
     });
+
     savedSearchesContainer.appendChild(searchEntry);
   });
 }
 
+function removeSavedSearch(searchValue) {
+  const savedSearches = JSON.parse(localStorage.getItem("savedSearches")) || [];
+  const updatedSavedSearches = savedSearches.filter(value => value !== searchValue);
+  localStorage.setItem("savedSearches", JSON.stringify(updatedSavedSearches));
+  displaySavedSearches();
+}
+
+function clearSavedSearches() {
+  localStorage.removeItem("savedSearches");
+  savedSearchesContainer.innerHTML = "";
+}
+
 SearchBtn.addEventListener("click", saveInputToLocalStorage);
+clearSavedSearchesBtn.addEventListener("click", clearSavedSearches);
 
 window.addEventListener("DOMContentLoaded", displaySavedSearches);
 

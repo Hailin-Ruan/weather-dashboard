@@ -46,10 +46,13 @@ header {
     cursor: pointer;
 }
 
-#saved-searches {
-    align-items: center;
-    color: #cdeeff;
-}
+.saved-search-entry {
+    color: #000; /* Change the color value to the desired text color */
+  }
+  
+  .saved-search-entry:hover {
+    color: #0D9DE3; /* Change the color value to the desired text color on hover */
+  }  
 
 #weather-right-side {
     width: 70%;
