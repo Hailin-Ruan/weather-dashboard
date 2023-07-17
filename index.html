@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <!--font awesome-->
     <script src="https://kit.fontawesome.com/d4b46c5fe6.js" crossorigin="anonymous"></script>
+    <!--day.js-->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -26,26 +30,26 @@
             <input type="text" id="searchInput" placeholder="Enter city name">
             <button type="submit" id="button">Search</button>
         </div>
+        <div class="not-found">
+            <p><i class="fa-solid fa-circle-exclamation"></i> Oops, invalid location! Please try again.</p>
+        </div>
+        <div id="saved-searches"></div>
     </div>
 
     <main id="weather-right-side">
-        <!-- <div class="not-found">
-            <p><i class="fa-solid fa-circle-exclamation"></i> Oops, invalid location! Please try again.</p>
-        </div> -->
-
+        <div class="weather">
         <div class="weather-current">
             <div class="top-line">
-                <h1 class="city">Sydney</h1>
-                <h2 class="date">17 July 2023</h2>
+                <h1 class="city">City</h1>
+                <h2 class="date">Date</h2>
             </div>
-            <div class="weather-icon">
-                <img src="./assets/image/cloud.png" alt="cloudy">
+            <div>
+                <i id="weather-icon"></i>
             </div>
             <div class="bottom-line">
                 <h1 class="temp"></h1>
             </div>
         </div>
-
         <div class="weather-details">
             <div class="col">
                 <p class="humidity"></p>
@@ -58,8 +62,14 @@
                 <p>Wind Speed</p>
             </div>
         </div>
+    </div>
 
     </main>
+
+    <script>
+        const currentDate = dayjs().format("D MMMM YYYY");
+        document.querySelector(".date").innerHTML = currentDate
+    </script>
 
     <script src="./assets/js/script.js"></script>
 

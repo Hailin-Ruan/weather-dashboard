@@ -22,7 +22,7 @@ header {
     width: 30%;
     float: left;
     position: relative;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .search-bar {
@@ -46,6 +46,11 @@ header {
     cursor: pointer;
 }
 
+#saved-searches {
+    align-items: center;
+    color: #cdeeff;
+}
+
 #weather-right-side {
     width: 70%;
     float: right;
@@ -54,15 +59,22 @@ header {
     text-align: center;
 }
 
-.weather-icon {
-    padding: 10px 50px;
-    border-left: 50px;
+.top-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 400px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+#weather-icon {
+    transform: scale(2);
 }
 
 .weather-current {
     font-size: 30px;
     font-weight: 500;
-
 }
 
 .weather-details {
@@ -73,6 +85,10 @@ header {
     margin-bottom: 50px;
     margin-top: 10px;
     font-size: 20px;
+}
+
+.not-found {
+    display: none;
 }
 
 /* CSS for larger screens */
