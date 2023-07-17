@@ -1,42 +1,86 @@
-html {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     margin: 10px;
-    font-family: 'Kanit', sans-serif;
-}
-
-main {
-    display: block;
 }
 
 header {
     background-color: #0D9DE3;
-    color: #F1F1F1;
+    color: #fff;
     text-align: center;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
 }
 
 #search-left-side {
     width: 30%;
     float: left;
+    position: relative;
+    font-size: 30px;
+}
+
+.search-bar {
+    border-radius: 5px;
+}
+
+#searchInput {
+    width: 200px;
+    height: 30px;
 }
 
 #button {
     background-color: #0D9DE3;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
 }
 
 #button:hover {
-    background-color: #F1F1F1;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 #weather-right-side {
     width: 70%;
     float: right;
     border-radius: 10px;
-    background-color: #F1F1F1;
+    background-color: #cdeeff;
+    text-align: center;
 }
+
+.weather-icon {
+    padding: 10px 50px;
+    border-left: 50px;
+}
+
+.weather-current {
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+.weather-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* CSS for larger screens */
+@media screen and (min-width: 768px) {
+    /* Styles for larger screens go here */
+  }
+  
+  /* CSS for smaller screens */
+  @media screen and (max-width: 767px) {
+    /* Styles for smaller screens go here */
+  }

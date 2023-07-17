@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--css stylesheet-->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-     <!--google font-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!--google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-     <!--font awesome-->
+    <!--font awesome-->
     <script src="https://kit.fontawesome.com/d4b46c5fe6.js" crossorigin="anonymous"></script>
     <title>Weather Dashboard</title>
 </head>
@@ -21,16 +20,45 @@
     </header>
 
     <div id="search-left-side">
-        <h1>Search for a city:</h1>
+        <h2>Search for a city:</h2>
         <div class="search-bar">
+            <i class="fa-solid fa-location-dot"></i>
             <input type="text" id="searchInput" placeholder="Enter city name">
             <button type="submit" id="button">Search</button>
         </div>
     </div>
 
     <main id="weather-right-side">
-        <h1>Current weather</h1>
-        <h2>Future weather</h2>
+        <!-- <div class="not-found">
+            <p><i class="fa-solid fa-circle-exclamation"></i> Oops, invalid location! Please try again.</p>
+        </div> -->
+
+        <div class="weather-current">
+            <div class="top-line">
+                <h1 class="city">Sydney</h1>
+                <h2 class="date">17 July 2023</h2>
+            </div>
+            <div class="weather-icon">
+                <img src="./assets/image/cloud.png" alt="cloudy">
+            </div>
+            <div class="bottom-line">
+                <h1 class="temp"></h1>
+            </div>
+        </div>
+
+        <div class="weather-details">
+            <div class="col">
+                <p class="humidity"></p>
+                <i class="fa-solid fa-water"></i>
+                <p>Humidity</p>
+            </div>
+            <div class="col">
+                <p class="wind"></p>
+                <i class="fa-solid fa-wind"></i>
+                <p>Wind Speed</p>
+            </div>
+        </div>
+
     </main>
 
     <script src="./assets/js/script.js"></script>
